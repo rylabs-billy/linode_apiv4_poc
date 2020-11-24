@@ -14,7 +14,7 @@ Python and shell script examples to demonstrate checking for the `status` in API
 - `restoring`
 - `stopped`
 
-Disk updates can return [responses](https://www.linode.com/docs/api/linode-instances/#disk-update__responses) with a `status` of:
+Disk updates can return [responses](https://www.linode.com/docs/api/linode-instances/#disk-update__responses) with a status of:
 - `ready`
 - `not ready`
 - `deleting`
