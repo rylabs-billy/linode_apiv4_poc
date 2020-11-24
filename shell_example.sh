@@ -11,10 +11,10 @@ linode_id=$(curl -sH "Content-Type: application/json" \
       "image": "linode/debian9",
       "root_pass": "aComplexP@ssword",
       "authorized_keys": [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG925acs9OB9+u1XKZmJRcZ4KIQjzIQAUZ2lGSAoSn6X bthompson@linode.com"
+        "<SSH_KEY>"
       ],
       "booted": true,
-      "label": "api_linode_example2",
+      "label": "shell_example",
       "type": "g6-nanode-1",
       "region": "ap-southeast"
     }' \
@@ -50,4 +50,4 @@ while true; do
 done
 
 echo "Disk is $disk_status."
-# curl -sH "Authorization: Bearer $TOKEN" https://api.linode.com/v4/linode/instances/23084658/disks/
+

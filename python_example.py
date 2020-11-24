@@ -13,7 +13,7 @@ new_linode = client.linode.instance_create('g6-nanode-1',
                                                      image='linode/debian9',
                                                      authorized_keys=SSH_KEY,
                                                      root_pass='aComplexP@ssword',
-                                                     label='api_python_test4',
+                                                     label='python_example',
                                                      booted=True)
                                                    
 status = None
@@ -24,7 +24,7 @@ while status != 'running':
 print(f'Linode is {status}.')
 time.sleep(10)
 
-# check status of disk operations, such as when resizing
+# resize disk and check status
 linode_id = new_linode.id
 disks = [str(i).split()[1] for i in new_linode.disks]
 disk_id = disks[0]
