@@ -1,29 +1,22 @@
 # Linode APIv4 PoC
 
-Python and shell script examples to demonstrate checking for the `status` in API responses. Instances can return [responses](https://www.linode.com/docs/api/linode-instances/#linode-create__responses) with a status of:
-- `running`
-- `offline`
-- `booting`
-- `rebooting`
-- `shutting_down`
-- `provisioning`
-- `deleting`
-- `migrating`
-- `rebuilding`
-- `cloning`
-- `restoring`
-- `stopped`
-
-Disk updates can return [responses](https://www.linode.com/docs/api/linode-instances/#disk-update__responses) with a status of:
-- `ready`
-- `not ready`
-- `deleting`
+Python and shell script examples of deploying Linodes via the APIv4 from private images and standard (Linode provided) images. With private images, the disk doesn't automatically resize to fill the plan's allocable space, so a manual resize is invoked before booting. In this case, it checks for `status` in API [responses](https://www.linode.com/docs/api/linode-instances/#linode-create__responses) before executing the next steps.
 
 ## Requirements
-These examples use `jq` for filtering JSON, and the offical [python library](https://github.com/Linode/linode_api4-python) for the Linode APIv4.
+Install `jq` for filtering JSON with the shell script.
 ```
 apt install jq -y
-pip3 install linode_api4
+```
+Install the [python library](https://github.com/Linode/linode_api4-python) and `python-dotenv` from `requirements.txt`.
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+## Usage
+```
+linodedeploy.{py,sh} <linode label>
 ```
 
 ## Documentation

@@ -15,7 +15,7 @@ create_linode () {
           "SSH_KEY"
         ],
         "booted": true,
-        "label": "shell_example",
+        "label": "'"$1"'",
         "type": "g6-nanode-1",
         "region": "ap-southeast"
       }' \
