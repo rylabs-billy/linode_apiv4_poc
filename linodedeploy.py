@@ -90,10 +90,6 @@ def boot_linode(instance):
         time.sleep(1)
         print(".", end="", flush=True)
     print()  
-        
-#    print(f"""
-#    linode {instance.id} created successfully! ssh should become available
-#    shortly at root@{instance.ipv4[0]}""")
 
 def main():
     linode = create_linode()
